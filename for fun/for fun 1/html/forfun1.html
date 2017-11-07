@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script  type="text/javascript">
+  var rank = -1;
+  var onSubmit = function(evt) {
+    var un = document.getElementById("username").value,
+      pw = document.getElementById("password").value;
+
+    if (un == 5500 || un == 4400 || un == 3300 || un == 2200 || un == 1100) {
+      switch (pw) {
+        case "a50":
+          rank = 1;
+          break;
+        case "ab3":
+        case "a659":
+          rank = 2;
+          break;
+        case "b03":
+        case "555":
+          rank = 3;
+          break;
+      }
+
+      window.name = "un=" + un + ";rank=" + rank;
+      window.location = "spy2.html";
+    }
+  }
+
+    }
+  }
+  </script>
+<!--  <meta charset="utf-8"> -->
+  <title>for fun1</title>
+</head>
+
+<body>
+  <h1>plese sine in</h1>
+  <br><br><br><br><br><br><br><br><input id="username" type="number" name="username" value="">
+  <br><br><br><br><br><br><br><br><br><br><br><br><input id="password" type="password" name="password" value="">
+  <br><br><button type="button" name="sumite" onclick="sumet">sumite</button>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>spy</title>
+  <script>
+    var rank = -1;
+    var onSubmit = function(evt) {
+      var un = document.getElementById("username").value,
+        pw = document.getElementById("password").value;
+
+      if (un == 500 || un == 400 || un == 300 || un == 200 || un == 100) {
+        switch (pw) {
+          case "a50":
+            rank = 1;
+            break;
+          case "ab3":
+          case "a659":
+            rank = 2;
+            break;
+          case "b03":
+          case "555":
+            rank = 3;
+            break;
+        }
+
+        window.name = "un=" + un + ";rank=" + rank;
+        window.location = "spy2.html";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1 color=' #33ff33'>plese log in</h1>
+    user name
+    <br>
+    <input id="username" type="number" name="userName" value="">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> password
+    <br>
+    <input id="password" type="password" name="password" value="">
+    <button onclick=onSubmit()>Logon</button>
+</body>
+
+</html>

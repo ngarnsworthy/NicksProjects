@@ -12,11 +12,29 @@
 </head>
 
 <body>
+<!--  <script>
+  var x = document.getElementById("demo");
 
+  function getLocation() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+  }
+
+  function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+  }
+</script>-->
   <div id="map"></div>
   <script>
+  var x = getLocation()
     function initMap() {
-      var uluru = {lat: 44.802058, lng: -93.076644};
+
+      var uluru = {lat: 44.8022345, lng:
+ -93.0764401};
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 100,
         mapTypeId: "satellite",

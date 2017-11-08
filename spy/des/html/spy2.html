@@ -12,38 +12,44 @@
 </head>
 
 <body>
-<!--  <script>
+<script>
   var x = document.getElementById("demo");
 
-  function getLocation() {
+  function  getLocation() {
+    let promise = new Promise(function(resolve, reject) {
+
       if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-          x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-  }
+            navigator.geolocation.getCurrentPosition(function(pos) {
+              console.log(pos);
+              resolve(pos);
+            });
+        } else {
+            console.error("Geolocation is not supported by this browser.");
+            reject();
+        }
+    });
 
-  function showPosition(position) {
-      x.innerHTML = "Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude;
+            return promise;
   }
-</script>-->
+</script>
+
   <div id="map"></div>
-  <script>
-  var x = getLocation()
-    function initMap() {
 
-      var uluru = {lat: 44.8022345, lng:
- -93.0764401};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 100,
-        mapTypeId: "satellite",
-        center: uluru
-      });
-      var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-      });
+  <script>
+    function initMap() {
+        var uluru = {lat: 44.8022345, lng: -93.0764401};
+
+        getLocation().then(function(pos) {
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 100,
+            mapTypeId: "satellite",
+            center: { lat: pos.coords.latitude, lng: pos.coords.longitude }
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        });
     }
   </script>
 

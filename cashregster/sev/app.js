@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
-var password;
+
 
 http.createServer(function(req, res) {
 
@@ -55,27 +55,6 @@ http.createServer(function(req, res) {
   } else {
 
     switch (filePath) {
-      case "./agree":
-        res.writeHead(200, {
-          "Content-Type": "plain/txt"
-        });
-        res.end("have fun");
-        break;
-
-      case "./users":
-        res.writeHead(200, {
-          "Content-Type": "plain/txt"
-        });
-        res.end("Chris, Nick, Jen, Maddie");
-        break;
-
-      case "./password":
-      console.log(password);
-        res.writeHead(200, {
-          "Content-Type": "plain/txt"
-        });
-        res.end(password);
-        break;
 
 
       default:
@@ -103,4 +82,4 @@ http.createServer(function(req, res) {
         });
     }
   }
-}).listen(8124);
+}).listen(8125);

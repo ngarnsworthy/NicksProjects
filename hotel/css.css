@@ -1,3 +1,12 @@
 .row {
   background: red
 }
+
+.cretets {
+  display: block;
+  position: relative;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+

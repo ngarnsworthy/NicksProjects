@@ -22,3 +22,9 @@
     }
 }
 
+.hotel{
+  width: 100%;
+  display: block; /* BUG: display:for centering must be block*/
+  text-align: center;
+  font-size: 1599%;
+}

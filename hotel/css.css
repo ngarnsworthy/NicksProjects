@@ -35,15 +35,16 @@ nav ul li a {
 }
 
 .print {
-    display: none;
+  display: none;
 }
+
 @media print {
-   .screen {
-       display: none;
-    }
-    .print {
-       display: block;
-    }
+  .screen {
+    display: none;
+  }
+  .print {
+    display: block;
+  }
 }
 
 .hotel{

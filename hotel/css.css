@@ -47,7 +47,7 @@ nav ul li a {
   }
 }
 
-.hotel{
+.hotel {
   width: 100%;
   display: block;
   /* BUG: display:for centering must be block*/

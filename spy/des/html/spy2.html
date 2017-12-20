@@ -3,33 +3,66 @@
 <head>
   <title>spy2</title>
   <style>
-   #map {
-     width: 100%;
-     height: 400px;
-     background-color: grey;
-   }
+    #map {
+      width: 100%;
+      height: 400px;
+      background-color: grey;
+    }
+
   </style>
 </head>
 
 <body>
+  <img src="arow.png" alt="arow">
+
+  <script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+      let promise = new Promise(function(resolve, reject) {
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(pos) {
+            console.log(pos);
+            resolve(pos);
+          });
+        } else {
+          console.error("Geolocation is not supported by this browser.");
+          reject();
+        }
+      });
+
+      return promise;
+    }
+  </script>
 
   <div id="map"></div>
+
   <script>
     function initMap() {
-      var uluru = {lat: 44.802058, lng: -93.076644};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 100,
-        mapTypeId: "satellite",
-        center: uluru
-      });
-      var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
+      var uluru = {
+        lat: 44.8022345,
+        lng: -93.0764401
+      };
+
+      getLocation().then(function(pos) {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 100,
+          mapTypeId: "satellite",
+          center: {
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude
+          }
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
       });
     }
   </script>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAINHg5HDb2OcpiHLK4PM8C5m4MVLkeQFw&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAINHg5HDb2OcpiHLK4PM8C5m4MVLkeQFw&callback=initMap"></script>
 </body>
 
 </html>

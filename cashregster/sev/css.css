@@ -1,0 +1,19 @@
+.mane {
+margin: auto;
+width: 25%;
+border: 3px solid #00ff00;
+padding: 10px;
+}
+.input {
+margin: auto;
+width: 25%;
+border: 3px solid #cc0000;
+padding: 10px;
+}
+.f {
+  background: #07f813;
+
+}
+.speshel{
+  color: red
+}

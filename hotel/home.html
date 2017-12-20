@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+  <audio id="hotel">
+  <source src="scr/NickHotel.wav" type="audio/wav">
+  </audio>
+  <header>
+    <div class="hotel">
+      <p onclick="playAudio()"> H O T E L</p>
+    </div>
+
+    <nav>
+
+      <ul>
+
+
+
+        <li> <button type="button" name="pay" class="w3-button w3-border w3-hover-blue-grey" onclick="window.location(" pay.html ")" id="pay">pay</button>
+        </li>
+
+        <li>
+          <button class="w3-button w3-border w3-hover-blue-grey" type="button" id="roomget" onclick="window.location(" room.html ")" name="button">room get</button>
+        </li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <article class="">
+  </article>
+
+  <div class="cretets">
+    thank you to w3schools
+  </div>
+
+  <script>
+    var x = document.getElementById("hotel");
+
+    function playAudio() {
+      x.play();
+    }
+
+    function pauseAudio() {
+      x.pause();
+    }
+  </script>
+
+</body>
+
+</html>

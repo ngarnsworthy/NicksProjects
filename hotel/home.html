@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800i" rel="stylesheet">
   <link rel="stylesheet" href="css.css">
 </head>
 
@@ -27,18 +28,45 @@
 
 
 
-        <li> <button type="button" name="pay" class="w3-button w3-border w3-hover-blue-grey" onclick="window.location(" pay.html ")" id="pay">pay</button>
+        <li> <button type="button" name="pay" class="w3-button w3-border w3-hover-blue-grey" onclick="window.location = 'pay.html'" id="pay">pay</button>
         </li>
 
         <li>
-          <button class="w3-button w3-border w3-hover-blue-grey" type="button" id="roomget" onclick="window.location(" room.html ")" name="button">room get</button>
+          <button class="w3-button w3-border w3-hover-blue-grey" type="button" id="roomget" onclick="window.location = 'room_get.html'" name="button">room get</button>
+        </li>
+        <li>
+          <button class="w3-button w3-border w3-hover-blue-grey" type="button" id="home" onclick="window.location = 'home.html'" name="button">home</button>
         </li>
 
       </ul>
     </nav>
   </header>
+  <aside class="">
+    <section>
+      GET A ROOM!!!
+      <a href="room_get.html">HERE!!!</a>
+    </section>
 
+    <br>
+    <section>
+      PAY ON THE SPOT
+    </section>
+
+  </aside>
   <article class="">
+    <section>
+      <div class="info">
+        Mom
+        <img src="scr/mom.jpg" alt="Mom">
+      </div>
+      <div class="desc">
+        <ul>
+          <li> I work as the head cleaning person for the hotel.</li>
+          <li> I also am the main activities coordinator.</li>
+          <li>Also I sometimes drive around the hotel tour van.</li>
+        </ul>
+      </div>
+    </section>
   </article>
 
   <div class="cretets">
@@ -55,6 +83,7 @@
     function pauseAudio() {
       x.pause();
     }
+
   </script>
 
 </body>

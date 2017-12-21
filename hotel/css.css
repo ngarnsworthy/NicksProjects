@@ -14,14 +14,14 @@ nav ul {
 nav ul li {
   display: inline;
   border-right: 2px solid #111111;
-  padding: 2px;
+  padding: 4px;
 }
 
 nav ul li:last-child {
   border-right: none;
 }
 
-nav ul li a {
+nav ul li button {
   text-decoration: none;
   color: #111111;
 }
@@ -87,6 +87,19 @@ body {
   display: inline;
 }
 
+.info>a:link {
+  text-decoration: none;
+}
+
+.info>a:hover {
+  color: pink;
+  text-decoration: underline;
+}
+
+.info>a:visited {
+  color: #c50bda;
+}
+
 .desc {
   display: inline-table;
 }
@@ -96,28 +109,40 @@ aside {
   border: 5px;
   padding: 10px;
   border-radius: 100px;
-
 }
 
-article {background-color: #fa4a4a;
-margin-bottom: 24px;
-min-height: 320px;
-padding-left: 8px;
-padding-right: 8px;
+article {
+  background-color: #fa4a4a;
+  margin-bottom: 24px;
+  min-height: 320px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-@@media all and (min-width: 900px) {
-  article{
+@media all and (max-width: 900px) {
+  article {
+    width: 60%;
+  }
+  aside {
+    padding-left: 24px;
+    width: 40%;
+  }
+  footer {
+    clear: both;
+  }
+}
+
+@media all and (min-width: 900px) {
+  article {
     float: left;
     width: 66%;
   }
-  aside{
+  aside {
     float: left;
     padding-left: 24px;
     width: 34%;
-
   }
-  footer{
+  footer {
     clear: both;
   }
 }
@@ -125,4 +150,13 @@ padding-right: 8px;
 img {
   width: 600px;
   width: 600px;
+}
+
+footer ul li {
+  text-decoration: none;
+  color: #105b54;
+}
+
+footer{
+  margin: auto;
 }

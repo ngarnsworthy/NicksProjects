@@ -133,14 +133,13 @@ article {
 
 @media all and (max-width: 900px) {
   article {
-    width: 60%;
+    width: 100%;
   }
   aside {
-    padding-left: 24px;
-    width: 40%;
+    display: none;
   }
   footer {
-    clear: both;
+    display: none;
   }
 }
 
@@ -159,6 +158,11 @@ article {
   }
 }
 
+@media all and (max-width: 600px) {
+  .info>img {
+    display: none;
+    border-radius: 100px;
+  }
 }
 
 footer ul li {

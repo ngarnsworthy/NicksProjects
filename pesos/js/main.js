@@ -30,3 +30,12 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// var setProgress = function(a_val) {
+//   document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+//   this.MaterialProgress.setProgress(a_val);
+//   this.MaterialProgress.setBuffer(a_val);
+// });
+  // this.MaterialProgress.setProgress(a_val);
+  // this.MaterialProgress.setBuffer(a_val);
+}

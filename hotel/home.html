@@ -11,11 +11,17 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:800i" rel="stylesheet">
   <link rel="stylesheet" href="css.css">
+  <script src="js.js" type="text/javascript">
+
+  </script>
 </head>
 
 <body>
   <audio id="hotel">
     <source src="scr/NickHotel.wav" type="audio/wav">
+  </audio>
+  <audio id="ad">
+    <source src="scr\AD.wav" type="audio/wav">
   </audio>
   <header>
     <div class="hotel">
@@ -89,9 +95,9 @@
     <section>
       PAY ON THE SPOT
     </section>
-get a masage whail you are here!<a href="https://sites.google.com/site/masage19989/">site</a>
-<br><img src="scr\ad1.png" width="80%" alt="AD">
-<br><img src="scr\ad2.png" width="80%" alt="AD">
+    get a masage whail you are here!<a href="https://sites.google.com/site/masage19989/">site</a>
+    <br><img src="scr\ad1.png" width="80%" alt="AD" onclick="audio(ad)">
+    <br><img src="scr\ad2.png" width="80%" alt="AD" onclick="audio(ad)">
   </aside>
   <footer>
     <div class="cretets">
@@ -100,17 +106,7 @@ get a masage whail you are here!<a href="https://sites.google.com/site/masage199
     </div>
   </footer>
 
-  <script>
-    var x = document.getElementById("hotel");
 
-    function playAudio() {
-      x.play();
-    }
-
-    function pauseAudio() {
-      x.pause();
-    }
-  </script>
 
 </body>
 

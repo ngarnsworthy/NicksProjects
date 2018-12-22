@@ -18,7 +18,7 @@
 
 <body>
   <header class="screen">
-    Living Room
+
     <nav>
       <ul>
         <li> <button type="button" name="pay" class="w3-button w3-border w3-hover-blue-grey" onclick="window.location = 'pay.html'" id="pay">pay</button>
@@ -40,7 +40,7 @@
       <div class="col-sm-6"><b>days</b>
         <input type="number" onchange="do_calc()" name="" id="days" value="0"><b>days</b><br>
         <input type="number" onchange="do_calc()" name="" id="idOther" value="" disabled=true>
- Total
+        Total
         <span id="sum"></span>
       </div>
     </div>
@@ -48,16 +48,20 @@
     <form class="Otherpick" id="Otherpick">
       <table>
         <tr>
-          <th></th><th>amount</th>
+          <th></th>
+          <th>amount</th>
         </tr>
         <tr>
-          <td> <input id="idHeated" type="checkbox" onchange="do_calc()">heated sheats</td><td> <input type="number" onchange="do_calc()" value="0" id="heated_sheatsA"> </td>
+          <td> <input id="idHeated" type="checkbox" onchange="do_calc()">heated sheats</td>
+          <td> <input type="number" onchange="do_calc()" value="0" id="heated_sheatsA"> </td>
         </tr>
         <tr>
-          <td> <input id="idTrip" type="checkbox" onchange="do_calc()">trip</td><td> <input type="number" onchange="do_calc()" value="0" id="tripA"> </td>
+          <td> <input id="idTrip" type="checkbox" onchange="do_calc()">trip</td>
+          <td> <input type="number" onchange="do_calc()" value="0" id="tripA"> </td>
         </tr>
         <tr>
-          <td> <input id="idCoffee" type="checkbox" onchange="do_calc()">coffee</td><td> <input type="number" onchange="do_calc()" value="0" id="coffeeA"> </td>
+          <td> <input id="idCoffee" type="checkbox" onchange="do_calc()">coffee</td>
+          <td> <input type="number" onchange="do_calc()" value="0" id="coffeeA"> </td>
         </tr>
 
       </table>
@@ -74,19 +78,19 @@
       <tr>
       </tr>
       <tr>
-<td> <span id="idHeated_sheats"></span> </td>
-<td>20&cent;</td>
+        <td> <span id="idHeated_sheats"></span> </td>
+        <td>20&cent;</td>
       </tr>
       <tr>
-<td> <span id="idTrip"></span> </td>
-<td>100&cent;</td>
+        <td> <span id="idTrip"></span> </td>
+        <td>100&cent;</td>
       </tr>
       <tr>
-<td> <span id="idCoffee"></span> </td>
-<td>3&cent;</td>
+        <td> <span id="idCoffee"></span> </td>
+        <td>3&cent;</td>
       </tr>
     </table>
-    <hr/>
+    <hr />
 
     <table>
       <tr>

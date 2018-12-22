@@ -1,9 +1,13 @@
-var http = require('http');
+var https = require('https');
 var fs = require('fs');
 var path = require('path');
 
+var options = {
+  key: fs.readFileSync('private.pem'),
+  cert: fs.readFileSync('selfSigned.pem')
+};
 
-http.createServer(function(req, res) {
+https.createServer(options, function(req, res) {
 
   console.log('request received');
 

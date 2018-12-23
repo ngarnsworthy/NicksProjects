@@ -5,7 +5,6 @@ var coffee = 0;
 var heated_sheats = 0;
 var trip = 0;
 var rooms = 0;
-var x = 0;
 function reseat() {
   do_calc();
     $(idDays).html(days*50);
@@ -43,15 +42,6 @@ function do_calc() {
   document.getElementById('sum').innerHTML = sum;
 }
 function audio(song) {
-  var x = document.getElementById(song);
-  playAudio()
-}
-
-
-function playAudio() {
+  x = document.getElementById(song);
   x.play();
-}
-
-function pauseAudio() {
-  x.pause();
 }

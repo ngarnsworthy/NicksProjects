@@ -3,13 +3,22 @@ var fs = require('fs');
 var jsonfile = require('jsonfile');
 var path = require('path');
 var logon = [ {un: "Nick", pw: "password", remember: true} ];
+var auth = require('http-auth');
+
+var basic = auth.basic({
+  realm: "Nick Area",
+  file: __dirname + "/users.htpasswd"
+});
+
+basic.key = fs.readFileSync('sscp.pem');
+basic.cert = fs.readFileSync('ssc.pem');
 
 var options = {
   key: fs.readFileSync('sscp.pem'),
   cert: fs.readFileSync('ssc.pem')
 };
 
-https.createServer(function(req, res) {
+https.createServer( options, function(req, res) {
   jsonfile.readFile("data.json", function(err, obj) {
     logon = obj || [];
   });

@@ -1,10 +1,15 @@
-var http = require('http');
+var https = require('https');
 var fs = require('fs');
 var jsonfile = require('jsonfile');
 var path = require('path');
 var logon = [ {un: "Nick", pw: "password", remember: true} ];
 
-http.createServer(function(req, res) {
+var options = {
+  key: fs.readFileSync('sscp.pem'),
+  cert: fs.readFileSync('ssc.pem')
+};
+
+https.createServer(function(req, res) {
   jsonfile.readFile("data.json", function(err, obj) {
     logon = obj || [];
   });

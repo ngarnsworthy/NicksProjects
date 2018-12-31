@@ -37,7 +37,7 @@ function do_calc() {
     other += coffee;
   }
 
-  sum = (rooms*days*50)+other;
+  sum = (rooms*days*25)+other;
   $(idOther).val(other);
   document.getElementById('sum').innerHTML = sum;
 }

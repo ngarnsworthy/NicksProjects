@@ -2,6 +2,7 @@ var https = require('https');
 var fs = require('fs');
 var jsonfile = require('jsonfile');
 var path = require('path');
+var password = require('./pasword.js/pasword');
 
 
 var options = {

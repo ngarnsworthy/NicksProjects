@@ -1,0 +1,2 @@
+# pasword.js
+pasword manager

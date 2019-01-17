@@ -38,4 +38,3 @@ window.onclick = function(event) {
 // });
   // this.MaterialProgress.setProgress(a_val);
   // this.MaterialProgress.setBuffer(a_val);
-}

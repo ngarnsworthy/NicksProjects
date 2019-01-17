@@ -2,7 +2,7 @@ var https = require('https');
 var fs = require('fs');
 var jsonfile = require('jsonfile');
 var path = require('path');
-var password = require('./pasword.js/pasword');
+var pasword = require('./pasword.js/pasword');
 
 
 var options = {
@@ -53,13 +53,13 @@ https.createServer( options, function(req, res) {
   req.on('end', function() {
     console.log(body);
     objArr = body.split('&').map(function(o) { return o.split("=")} );
-    logon.push( { un: objArr[0][1], pw: objArr[1][1], remember: objArr[3][1]==="on" });
+    // logon.push( { un: objArr[0][1], pw: objArr[1][1], remember: objArr[3][1]==="on" });
+    pasword.add( objArr[0][1], objArr[1][1], 0);
+    // jsonfile.writeFile("data.json", logon, function(err) {
+    //   console.error(err);
+    // })
 
-    jsonfile.writeFile("data.json", logon, function(err) {
-      console.error(err);
-    })
-
-    console.log(logon);
+    // console.log(logon);
     console.log("END");
   });
   res.writeHead(200, {

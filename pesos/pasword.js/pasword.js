@@ -21,24 +21,24 @@ function find(a_username, a_password) {
   }
 }
 
-/**
- *
- */
-var writeDB = function() {
-    fs.writeFile('db.txt', JSON.stringify(passwords), err => {
-        if (err) throw err;
-      });
-};
+    module.exports = {
+      passwords: [],
 
-    return {
+      writeDB: function() {
+        console.log(this.passwords)
+          fs.writeFile('db.txt', JSON.stringify(this.passwords), err => {
+              if (err) throw err;
+            });
+      },
+
       /** Add a user to the system */
       add: function(a_username, a_password, a_accountVal = 0) {
-        passwords.push({
+        this.passwords.push({
           un: a_username,
           pw: a_password,
           av: a_accountVal
         });
-        writeDB();
+        this.writeDB();
       },
 
       /** Check the balance for a user in the system
@@ -56,7 +56,9 @@ var writeDB = function() {
         let acount = find(a_username, a_password);
         if (acount) {
           acount.av += a_accountValIncrese
-          writeDB()
+          this.writeDB()
         }
       }
     };
+
+    return module.exports;

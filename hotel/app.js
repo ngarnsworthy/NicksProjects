@@ -1,11 +1,13 @@
-var https = require('https');
-var fs = require('fs');
-var path = require('path');
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
 
-var options = {
+const options = {
   key: fs.readFileSync('private.pem'),
   cert: fs.readFileSync('selfSigned.pem')
 };
+
+var g_coupons = [];
 
 https.createServer(options, function(req, res) {
 
@@ -47,11 +49,17 @@ https.createServer(options, function(req, res) {
       body += data;
     });
     req.on('end', function() {
+      body = JSON.parse(body)
+      res.writeHead(200);
       console.log(body);
-      password = body.split('=')[1];
-      console.log(password);
-      console.log("END");
-    });
+      g_coupons=body
+      fs.writeFile("db.txt" , g_coupons, function(err) {
+          if(err)
+              return console.log(err);})
+      res.end();
+  })
+
+
     res.writeHead(200, {
       'Content-Type': 'text/html'
     });
@@ -60,8 +68,19 @@ https.createServer(options, function(req, res) {
 
     switch (filePath) {
 
+      case './getCoupons':
+        res.writeHead(200);
+        res.end(JSON.stringify(g_coupons));
+        res.end();
+        fs.readFile("db.txt", function(error, content) {
+          if (error) {
+          throw(err)
+        }})
+        }
 
-      default:
+
+
+      // default:
 
         fs.readFile(filePath, function(error, content) {
           if (error) {
@@ -83,7 +102,7 @@ https.createServer(options, function(req, res) {
             });
             res.end(content, 'utf-8');
           }
-        });
-    }
+        ;
+    })
   }
 }).listen(8000);

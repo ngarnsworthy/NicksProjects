@@ -40,8 +40,26 @@ function do_calc() {
   sum = (rooms*days*25)+other;
   $(idOther).val(other);
   document.getElementById('sum').innerHTML = sum;
+  check();
 }
 function audio(song) {
   x = document.getElementById(song);
   x.play();
+}
+function check() {
+$.post("check", {days: days}, function(data, status){
+alert("Data: " + data + "\nStatus: " + status);
+});
+$.post("check", {rooms: rooms}, function(data, status){
+alert("Data: " + data + "\nStatus: " + status);
+});
+$.post("check", {trip: trip}, function(data, status){
+alert("Data: " + data + "\nStatus: " + status);
+});
+$.post("check", {coffee: coffee}, function(data, status){
+alert("Data: " + data + "\nStatus: " + status);
+});
+$.post("check", {heted_sheats: heated_sheats}, function(data, status){
+alert("Data: " + data + "\nStatus: " + status);
+});
 }

@@ -48,8 +48,17 @@ https.createServer(options, function(req, res) {
     });
     req.on('end', function() {
       console.log(body);
-      password = body.split('=')[1];
-      console.log(password);
+      check = body.split('=')[1];
+      console.log(check);
+      if (check && (0>check||check.indexOf('-')>0)) {
+        res.writeHead(400, {
+          'Content-Type': 'text/html'
+        });
+      } else {
+        res.writeHead(200, {
+          'Content-Type': 'text/html'
+        });
+      }
       console.log("END");
     });
     res.writeHead(200, {
